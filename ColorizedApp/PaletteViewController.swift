@@ -20,12 +20,14 @@ class PaletteViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    // MARK: - Public Properties
     var redColor = 1.0
     var greenColor = 1.0
     var blueColor = 1.0
     
     var delegate: PaletteViewControllerDelegate!
-
+    
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         

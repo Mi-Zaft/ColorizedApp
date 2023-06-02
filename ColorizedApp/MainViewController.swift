@@ -13,22 +13,25 @@ protocol PaletteViewControllerDelegate {
 
 class MainViewController: UIViewController {
     
+    // MARK: - Public Properties
     var redColor = 1.0
     var greenColor = 1.0
     var blueColor = 1.0
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
     }
     
+    // MARK: - Public Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let paletteVC = segue.destination as? PaletteViewController {
             
             guard let backgroundColor = view.backgroundColor else { return }
             guard let components = backgroundColor.cgColor.components else { return }
-             
+            
             paletteVC.delegate = self
             
             paletteVC.redColor = components[0]
